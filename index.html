@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>LAUNCH3D</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+<script>
+
+var offB1= "images/gifs/b1.gif"; var offB2= "images/gifs/b2.gif"; var offB3= "images/gifs/b3.gif"; var offB4= "images/gifs/b4.gif"; 
+var offB5= "images/gifs/b5.gif"; var offB6= "images/gifs/b6.gif"; var offB7= "images/gifs/b7.gif"; var offB8= "images/gifs/b8.gif";
+var offB9= "images/gifs/b9.gif"; var offB10= "images/gifs/b10.gif"; var offB11= "images/gifs/b11.gif"; var offB12= "images/gifs/b12.gif";
+var offB13= "images/gifs/b13.gif"; var offB14= "images/gifs/b14.gif"; var offB15= "images/gifs/b15.gif"; var offB16= "images/gifs/b16.gif";
+var offD1= "images/gifs/d1.gif"; var offD2= "images/gifs/d2.gif"; var offD3= "images/gifs/d3.gif"; var offD4= "images/gifs/d4.gif"; 
+var offD5= "images/gifs/d5.gif"; var offD6= "images/gifs/d6.gif"; var offD7= "images/gifs/d7.gif"; var offD8= "images/gifs/d8.gif";
+var offD9= "images/gifs/d9.gif"; var offD10= "images/gifs/d10.gif"; var offD11= "images/gifs/d11.gif"; var offD12= "images/gifs/d12.gif";
+var offD13= "images/gifs/d13.gif"; var offD14= "images/gifs/d14.gif"; var offD15= "images/gifs/d15.gif"; var offD16= "images/gifs/d16.gif";
+var offV1= "images/gifs/v1.mov"; var offV2= "images/gifs/v2.gif"; var offV3= "images/gifs/v3.gif"; var offV4= "images/gifs/v4.gif"; 
+var offV5= "images/gifs/v5.gif"; var offV6= "images/gifs/v6.gif"; var offV7= "images/gifs/v7.gif"; var offV8= "images/gifs/v8.gif";
+var offV9= "images/gifs/v9.gif"; var offV10= "images/gifs/v10.gif"; var offV11= "images/gifs/v11.gif"; var offV12= "images/gifs/v12.gif";
+var offV13= "images/gifs/v13.gif"; var offV14= "images/gifs/v14.gif"; var offV15= "images/gifs/v15.gif"; var offV16= "images/gifs/v16.gif";
+var offF1= "images/gifs/f1.mov"; var offF2= "images/gifs/f2.gif"; var offF3= "images/gifs/f3.gif"; var offF4= "images/gifs/f4.gif"; 
+var offF5= "images/gifs/f5.gif"; var offF6= "images/gifs/f6.gif"; var offF7= "images/gifs/f7.gif"; var offF8= "images/gifs/f8.gif";
+var offF9= "images/gifs/f9.gif"; var offF10= "images/gifs/f10.gif"; var offF11= "images/gifs/f11.gif"; var offF12= "images/gifs/f12.gif";
+var offF13= "images/gifs/f13.gif"; var offF14= "images/gifs/f14.gif"; var offF15= "images/gifs/f15.gif"; var offF16= "images/gifs/f16.gif";
+
+var onOrg= "images/orange.png";
+var onRed= "images/red.png";
+var onMute= "images/mute.png";
+var offMute= "images/mute2.png";
+
+</script>
+
+<script>
+
+var audio = [];
+var isPlaying = [];
+
+function sound(id, loop){
+  if(isPlaying[id]){
+    audio[id].pause();
+    isPlaying[id] = false;
+    audio[id].currentTime = 0;
+  }
+  else{
+    audio[id].play();
+    audio[id].loop = true;
+    isPlaying[id] = true;
+    audio[id].currentTime = 0;
+  }
+}
+
+function fx(id){
+    audio[id].play();
+    audio[id].loop = false;
+    isPlaying[id] = true;
+    audio[id].currentTime = 0;
+}
+
+function createAudio(src,i){
+  audio[i] = new Audio();
+  audio[i].src = src;
+  isPlaying[i] = false;
+}
+
+var mySources = ['audio/drums/1.wav','audio/drums/2.wav','audio/drums/3.wav','audio/drums/4.wav','audio/drums/5.wav','audio/drums/6.wav',
+				'audio/drums/7.wav','audio/drums/8.wav','audio/drums/9.wav','audio/drums/10.wav','audio/drums/11.wav','audio/drums/12.wav',
+				'audio/drums/13.wav','audio/drums/14.wav','audio/drums/15.wav','audio/drums/16.wav','audio/bass/1.wav','audio/bass/2.wav',
+				'audio/bass/3.wav','audio/bass/4.wav','audio/bass/5.wav','audio/bass/6.wav','audio/bass/7.wav','audio/bass/8.wav',
+				'audio/bass/9.wav','audio/bass/10.wav','audio/bass/11.wav','audio/bass/12.wav','audio/bass/13.wav','audio/bass/14.wav',
+				'audio/bass/15.wav','audio/bass/16.wav','audio/fx/1.wav','audio/fx/2.wav','audio/fx/3.wav','audio/fx/4.wav',
+				'audio/fx/5.wav','audio/fx/6.wav','audio/fx/7.wav','audio/fx/8.wav','audio/fx/9.wav','audio/fx/10.wav',
+				'audio/fx/11.wav','audio/fx/12.wav','audio/fx/13.wav','audio/fx/14.wav','audio/fx/15.wav','audio/fx/16.wav',
+				'audio/vocals/1.wav','audio/vocals/2.wav','audio/vocals/3.wav','audio/vocals/4.wav','audio/vocals/5.wav','audio/vocals/6.wav',
+				'audio/vocals/7.wav','audio/vocals/8.wav','audio/vocals/9.wav','audio/vocals/10.wav','audio/vocals/11.wav','audio/vocals/12.wav',
+				'audio/vocals/13.wav','audio/vocals/14.wav','audio/vocals/15.wav','audio/vocals/16.wav'];
+
+for(var i = 0;i<=mySources.length;i++){
+  createAudio(mySources[i-1],i);} 
+
+</script>
+
+	</head>
+
+<body>
+
+<div class="container">
+	<video poster="images/background.jpg" autoplay="true" loop mute="true">
+		<source src="images/background.mp4" type="video/mp4">
+	</video>
+		<div class="example">
+			<div class="example-content">
+
+<!-- Column 1 -->
+
+				<div class="parent">
+
+					<img class="top" src="images/orange.png" onclick="sound(1); this.src = (this.src.endsWith(offD1)? onOrg : offD1);"/>
+					<img class="top" src="images/orange.png" onclick="sound(2); this.src = (this.src.endsWith(offD2)? onOrg : offD2);"/>
+					<img class="top" src="images/orange.png" onclick="sound(3); this.src = (this.src.endsWith(offD3)? onOrg : offD3);"/>
+					<img class="top" src="images/orange.png" onclick="sound(4); this.src = (this.src.endsWith(offD4)? onOrg : offD4);"/>
+					<img class="top" src="images/orange.png" onclick="sound(5); this.src = (this.src.endsWith(offD5)? onOrg : offD5);"/>
+					<img class="top" src="images/orange.png" onclick="sound(6); this.src = (this.src.endsWith(offD6)? onOrg : offD6);"/>
+					<img class="top" src="images/orange.png" onclick="sound(7); this.src = (this.src.endsWith(offD7)? onOrg : offD7);"/>
+					<img class="top" src="images/orange.png" onclick="sound(8); this.src = (this.src.endsWith(offD8)? onOrg : offD8);"/>
+					<img class="muteTop" src="images/mute.png" onclick="this.src = (this.src.endsWith(offMute)? onMute : offMute);"/>
+					<div class="stopTop"></div>
+
+<!-- Column 2 -->
+
+					<img class="drums" src="images/orange.png" onclick="sound(9); this.src = (this.src.endsWith(offD9)? onOrg : offD9);"/>
+					<img class="drums" src="images/orange.png" onclick="sound(10); this.src = (this.src.endsWith(offD10)? onOrg : offD10);"/>
+					<img class="drums" src="images/orange.png" onclick="sound(11); this.src = (this.src.endsWith(offD11)? onOrg : offD11);"/>
+					<img class="drums" src="images/orange.png" onclick="sound(12); this.src = (this.src.endsWith(offD12)? onOrg : offD12);"/>
+					<img class="drums" src="images/orange.png" onclick="sound(13); this.src = (this.src.endsWith(offD13)? onOrg : offD13);"/>
+					<img class="drums" src="images/orange.png" onclick="sound(14); this.src = (this.src.endsWith(offD14)? onOrg : offD14);"/>
+					<img class="drums" src="images/orange.png" onclick="sound(15); this.src = (this.src.endsWith(offD15)? onOrg : offD15);"/>
+					<img class="drums" src="images/orange.png" onclick="sound(16); this.src = (this.src.endsWith(offD16)? onOrg : offD16);"/>
+					<img class="mute" src="images/mute.png" onclick="this.src = (this.src.endsWith(offMute)? onMute : offMute);"/>
+					<div class="stop"></div>
+
+<!-- Column 3 -->
+
+					<img class="bass" src="images/red.png" onclick="sound(17); this.src = (this.src.endsWith(offB1)? onRed : offB1);"/>
+					<img class="bass" src="images/red.png" onclick="sound(18); this.src = (this.src.endsWith(offB2)? onRed : offB2);"/>
+					<img class="bass" src="images/red.png" onclick="sound(19); this.src = (this.src.endsWith(offB3)? onRed : offB3);"/>
+					<img class="bass" src="images/red.png" onclick="sound(20); this.src = (this.src.endsWith(offB4)? onRed : offB4);"/>
+					<img class="bass" src="images/red.png" onclick="sound(21); this.src = (this.src.endsWith(offB5)? onRed : offB5);"/>
+					<img class="bass" src="images/red.png" onclick="sound(22); this.src = (this.src.endsWith(offB6)? onRed : offB6);"/>
+					<img class="bass" src="images/red.png" onclick="sound(23); this.src = (this.src.endsWith(offB7)? onRed : offB7);"/>
+					<img class="bass" src="images/red.png" onclick="sound(24); this.src = (this.src.endsWith(offB8)? onRed : offB8);"/>
+					<img class="mute" src="images/mute.png" onclick="this.src = (this.src.endsWith(offMute)? onMute : offMute);"/>
+					<div class="stop"></div>
+
+<!-- Column 4 -->
+
+					<img class="bass" src="images/red.png" onclick="sound(25); this.src = (this.src.endsWith(offB9)? onRed : offB9);"/>
+					<img class="bass" src="images/red.png" onclick="sound(26); this.src = (this.src.endsWith(offB10)? onRed : offB10);"/>
+					<img class="bass" src="images/red.png" onclick="sound(27); this.src = (this.src.endsWith(offB11)? onRed : offB11);"/>
+					<img class="bass" src="images/red.png" onclick="sound(28); this.src = (this.src.endsWith(offB12)? onRed : offB12);"/>
+					<img class="bass" src="images/red.png" onclick="sound(29); this.src = (this.src.endsWith(offB13)? onRed : offB13);"/>
+					<img class="bass" src="images/red.png" onclick="sound(30); this.src = (this.src.endsWith(offB14)? onRed : offB14);"/>
+					<img class="bass" src="images/red.png" onclick="sound(31); this.src = (this.src.endsWith(offB15)? onRed : offB15);"/>
+					<img class="bass" src="images/red.png" onclick="sound(32); this.src = (this.src.endsWith(offB16)? onRed : offB16);"/>
+					<img class="mute" src="images/mute.png" onclick="this.src = (this.src.endsWith(offMute)? onMute : offMute);"/>
+					<div class="stop"></div>
+
+<!-- Column 5 -->
+
+					<img class="fx" onclick="fx(33);"/>
+					<img class="fx" onclick="fx(34);"/>
+					<img class="fx" onclick="fx(35);"/>
+					<img class="fx" onclick="fx(36);"/>
+					<img class="fx" onclick="fx(37);"/>
+					<img class="fx" onclick="fx(38);"/>
+					<img class="fx" onclick="fx(39);"/>
+					<img class="fx" onclick="fx(40);"/>
+					<img class="mute" src="images/mute.png" onclick="this.src = (this.src.endsWith(offMute)? onMute : offMute);"/>
+					<div class="stop"></div>
+
+<!-- Column 6 -->
+
+					<img class="fx" onclick="fx(41);"/>
+					<img class="fx" onclick="fx(42);"/>
+					<img class="fx" onclick="fx(43);"/>
+					<img class="fx" onclick="fx(44);"/>
+					<img class="fx" onclick="fx(45);"/>
+					<img class="fx" onclick="fx(46);"/>
+					<img class="fx" onclick="fx(47);"/>
+					<img class="fx" onclick="fx(48);"/>
+					<img class="mute" src="images/mute.png" onclick="this.src = (this.src.endsWith(offMute)? onMute : offMute);"/>
+					<div class="stop"></div>
+
+<!-- Column 7 -->
+
+					<img class="vocals" onclick="fx(49);"/>
+					<img class="vocals" onclick="fx(50);"/>
+					<img class="vocals" onclick="fx(51);"/>
+					<img class="vocals" onclick="fx(52);"/>
+					<img class="vocals" onclick="fx(53);"/>
+					<img class="vocals" onclick="fx(54);"/>
+					<img class="vocals" onclick="fx(55);"/>
+					<img class="vocals" onclick="fx(56);"/>
+					<img class="mute" src="images/mute.png" onclick="this.src = (this.src.endsWith(offMute)? onMute : offMute);"/>
+					<div class="stop"></div>
+
+<!-- Column 8 -->
+
+					<img class="bottom" onclick="fx(57);"/>
+					<img class="bottom" onclick="fx(58);"/>
+					<img class="bottom" onclick="fx(59);"/>
+					<img class="bottom" onclick="fx(60);"/>
+					<img class="bottom" onclick="fx(61);"/>
+					<img class="bottom" onclick="fx(62);"/>
+					<img class="bottom" onclick="fx(63);"/>
+					<img class="bottom" onclick="fx(64);"/>
+					<img class="muteBottom" src="images/mute.png" onclick="this.src = (this.src.endsWith(offMute)? onMute : offMute);"/>
+					<div class="stopBottom"></div>
+
+				</div>
+
+				<div class="child">
+
+					<img class="footer" src="images/footer.png"/>
+
+				</div>
+
+			</div>
+		</div>
+</div>
+
+
+
+</body>
+</html>
