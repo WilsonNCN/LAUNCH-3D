@@ -1,0 +1,301 @@
+body, html {
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	overflow:hidden;
+	user-select: none;
+	-moz-user-select: none;
+}
+
+video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: 1;
+}
+
+.parent {
+	/*border: 5px solid #424242;*/
+	z-index: 2;
+	position: absolute;
+	background-image: url("../images/launchpad.png");
+	background-color: transparent;
+	margin: 0 auto;
+	top: 65px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 780px;
+	width: 880px;
+	padding: 10px;
+}
+
+.drums {
+	margin: 5px;
+	background: transparent;
+	color: white;
+	text-align: center;
+}
+
+
+.drums:active {
+	margin: 5px;
+	background: transparent;
+	color: white;
+	text-align: center;
+}
+
+.bass {
+	margin: 5px;
+	background: transparent;
+	color: white;
+	text-align: center;
+}
+
+
+.bass:active {
+	margin: 5px;
+	background: transparent;
+	color: white;
+	text-align: center;
+}
+
+.fx {
+	margin: 5px;
+	background: transparent;
+	color: white;
+	text-align: center;
+	background-image: url("../images/purple.png");
+}
+
+
+.fx:active {
+	margin: 5px;
+	background: transparent;
+	color: white;
+	text-align: center;
+	background-image: url("../images/purple2.png");
+}
+
+
+.vocals {
+	margin: 5px;
+	background: transparent;
+	color: white;
+	text-align: center;
+	background-image: url("../images/cyan.png");
+}
+
+
+.vocals:active {
+	margin: 5px;
+	background: transparent;
+	color: white;
+	text-align: center;
+	background-image: url("../images/cyan2.png");
+}
+
+.top {
+	margin: 5px;
+	margin-top: 100px;
+	background: transparent;
+	color: white;
+	text-align: center;
+}
+
+.top:active {
+	margin: 5px;
+	margin-top: 100px;
+	background: transparent;
+	color: white;
+	text-align: center;
+}
+
+.bottom {
+	margin: 5px;
+	margin-bottom: 20px;
+	background: transparent;
+	color: white;
+	text-align: center;
+	background-image: url("../images/cyan.png");
+}
+
+.bottom:active {
+	margin: 5px;
+	margin-bottom: 20px;
+	background: transparent;
+	color: white;
+	text-align: center;
+	background-image: url("../images/cyan2.png");
+}
+
+.stop {
+	margin: 5px;
+	margin-bottom: 0px;
+	background: transparent;
+	color: white;
+	text-align: center;
+	background-image: url("../images/stop.png");
+}
+
+
+.stop:active {
+	margin: 5px;
+	background: transparent;
+	color: white;
+	text-align: center;
+	background-image: url("../images/stop2.png");
+}
+
+.stopTop {
+	margin: 5px;
+	margin-top: 100px;
+	background: transparent;
+	color: white;
+	text-align: center;
+	background-image: url("../images/stop.png");
+}
+
+.stopTop:active {
+	margin: 5px;
+	margin-top: 100px;
+	background: transparent;
+	color: white;
+	text-align: center;
+	background-image: url("../images/stop2.png");
+}
+
+.stopBottom {
+	margin: 5px;
+	margin-bottom: 20px;
+	background: transparent;
+	color: white;
+	text-align: center;
+	background-image: url("../images/stop.png");
+}
+
+.stopBottom:active {
+	margin: 5px;
+	margin-bottom: 20px;
+	background: transparent;
+	color: white;
+	text-align: center;
+	background-image: url("../images/stop2.png");
+}
+
+.mute {
+	margin: 5px;
+	margin-left: 35px;
+	background: transparent;
+	color: white;
+	text-align: center;
+}
+
+
+.muteTop {
+	margin: 5px;
+	margin-left: 35px;
+	margin-top: 100px;
+	background: transparent;
+	color: white;
+	text-align: center;
+}
+
+.muteBottom {
+	margin: 5px;
+	margin-bottom: 20px;
+	margin-left: 35px;
+	background: transparent;
+	color: white;
+	text-align: center;
+}
+
+.child {
+	/*border: 5px solid #424242;*/
+	z-index: 3;
+	position: absolute;
+	background-color: transparent;
+	margin: 0 auto;
+	top: 855px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 114px;
+	width: 602px;
+	padding: 10px;
+}
+
+/* Flexbox */
+
+.parent {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.drums {
+	width: 70px;
+	height: 70px;
+}
+
+.bass {
+	width: 70px;
+	height: 70px;
+}
+
+.fx {
+	width: 70px;
+	height: 70px;
+}
+
+.vocals {
+	width: 70px;
+	height: 70px;
+}
+
+.top {
+	width: 70px;
+	height: 70px;
+}
+
+.bottom {
+	width: 70px;
+	height: 70px;
+}
+
+.mute {
+	width: 70px;
+	height: 70px;
+}
+
+.muteTop {
+	width: 70px;
+	height: 70px;
+}
+
+.muteBottom {
+	width: 70px;
+	height: 70px;
+}
+
+.stop {
+	width: 70px;
+	height: 70px;
+}
+
+.stopTop {
+	width: 70px;
+	height: 70px;
+}
+
+.stopBottom {
+	width: 70px;
+	height: 70px;
+}
